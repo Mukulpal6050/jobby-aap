@@ -1,0 +1,134 @@
+.job-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  color: #f8fafc;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Job Details Container */
+.job-details-card {
+  background-color: #202020;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.job-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.company-logo {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+.job-meta {
+  display: flex;
+  gap: 20px;
+  margin: 12px 0;
+  color: #cbd5e1;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  background: #1a1a1a;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-item:hover {
+  background: #333333;
+  transform: scale(1.05);
+}
+
+.skill-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 6px;
+}
+
+/* Life at Company */
+.life-at-company {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.life-at-company img {
+  width: 250px;
+  border-radius: 12px;
+}
+
+/* Similar Jobs Container */
+.similar-jobs-card {
+  background-color: #202020;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.similar-jobs-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.similar-job-card {
+  flex: 1 1 calc(33% - 16px);
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.similar-job-card:hover {
+  background-color: #333333;
+  transform: translateY(-4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .skill-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .life-at-company {
+    flex-direction: column;
+  }
+
+  .similar-job-card {
+    flex: 1 1 100%;
+  }
+}

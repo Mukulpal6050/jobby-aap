@@ -1,0 +1,101 @@
+.profile-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  padding: 15px;
+  border-radius: 12px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 260px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.profile-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.image {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #6366f1;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.08);
+}
+
+.name {
+  color: #6366f1;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.des {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Loader container styling */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+/* Error state */
+.profile-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+.profile-error button {
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  border: none;
+  padding: 6px 14px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+.profile-error button:hover {
+  background: linear-gradient(90deg, #4338ca, #4f46e5);
+  transform: scale(1.05);
+}
+
+/* ✅ Mobile responsive */
+@media screen and (max-width: 576px) {
+  .profile-container {
+    max-width: 200px;
+    padding: 12px;
+  }
+  .image {
+    height: 55px;
+    width: 55px;
+  }
+  .name {
+    font-size: 16px;
+  }
+  .des {
+    font-size: 12px;
+  }
+}

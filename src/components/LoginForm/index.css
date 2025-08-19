@@ -1,0 +1,128 @@
+/* Main Container */
+.login-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
+  padding: 20px;
+}
+
+/* Login Form Box */
+.login-form-container {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.login-form-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+/* Logo */
+.logo {
+  height: 40px;
+  width: auto;
+  margin-bottom: 35px;
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.08);
+}
+
+/* Input Fields */
+.input-container {
+  display: flex;
+  margin-top: 18px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.label {
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.input {
+  background-color: transparent;
+  border: solid 1px #475569;
+  padding: 10px 14px;
+  outline: none;
+  border-radius: 6px;
+  color: #f8fafc;
+  font-size: 14px;
+  transition:
+    border 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.input:focus {
+  border: solid 1px #60a5fa;
+  box-shadow: 0 0 6px #3b82f6;
+}
+
+/* Submit Button */
+.submit-button {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border: none;
+  padding: 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  align-self: center;
+  width: 100%;
+  margin-top: 30px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* Error Message */
+.error-message {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .login-form-container {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  .input {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .submit-button {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
