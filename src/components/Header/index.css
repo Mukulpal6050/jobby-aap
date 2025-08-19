@@ -1,4 +1,4 @@
-/* Container */
+/* ================= Header Container ================= */
 .header {
   background: linear-gradient(90deg, #141e30, #243b55);
   padding: 12px 24px;
@@ -12,11 +12,13 @@
   transition: all 0.3s ease;
 }
 
-/* Logo */
+/* ================= Logo ================= */
 .header-logo img {
   height: 45px;
   cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
 .header-logo img:hover {
@@ -24,7 +26,14 @@
   filter: brightness(1.2);
 }
 
-/* Navigation */
+/* ================= Navigation ================= */
+.header-nav {
+  display: flex;
+  align-items: center;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+}
+
 .header-nav .nav-links {
   display: flex;
   list-style: none;
@@ -33,7 +42,7 @@
   padding: 0;
 }
 
-/* Links */
+/* ================= Links ================= */
 .nav-link {
   color: #f1f1f1;
   text-decoration: none;
@@ -62,43 +71,63 @@
   width: 100%;
 }
 
-/* Logout Button */
+/* ================= Logout Button ================= */
 .logout-btn {
-  background: linear-gradient(90deg, #ff4f4f, #ff6f6f);
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  padding: 10px 24px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
   border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
+  border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease,
-    background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .logout-btn:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0px 6px 15px rgba(255, 79, 79, 0.5);
-  background: linear-gradient(90deg, #ff6f6f, #ff4f4f);
+  background: linear-gradient(90deg, #6366f1, #4f46e5);
+  box-shadow: 0px 6px 15px rgba(99, 102, 241, 0.5);
 }
 
-/* Responsive */
+/* ================= Hamburger Menu ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* ================= Mobile Responsive ================= */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
+    padding: 12px 20px;
   }
 
   .header-nav {
+    flex-direction: column;
     width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 10px;
+  }
+
+  .header-nav.show {
+    max-height: 500px; /* enough for nav links */
   }
 
   .header-nav .nav-links {
     flex-direction: column;
     gap: 15px;
-    margin-top: 12px;
     width: 100%;
+    margin: 0;
   }
 
   .nav-link,
@@ -106,5 +135,16 @@
     display: block;
     width: 100%;
     text-align: left;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+    order: 2; /* push to right */
+  }
+
+  /* Make nav full width below hamburger */
+  .header-logo {
+    order: 1;
   }
 }

@@ -37,11 +37,8 @@ class Jobs extends Component {
 
   render() {
     const {employmentTypesList, salaryRangesList} = this.props
-    const {
-      searchInput,
-      selectedEmploymentTypes,
-      selectedSalaryRange,
-    } = this.state
+    const {searchInput, selectedEmploymentTypes, selectedSalaryRange} =
+      this.state
 
     // ✅ join array into comma-separated string before passing
     const employmentTypesParam = selectedEmploymentTypes.join(',')

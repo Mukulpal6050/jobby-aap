@@ -1,18 +1,13 @@
-/* Headings */
-h1 {
-  color: #f8fafc;
-  font-family: 'Roboto', sans-serif;
-}
-
-/* Main Container */
+/* Container */
 .jobs-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #1e293b, #0f172a);
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Flex Layout */
+/* Layout */
 .job-container {
   padding: 20px 30px;
   display: flex;
@@ -24,39 +19,22 @@ h1 {
 .sidebar-container {
   width: 28%;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 14px;
   background: linear-gradient(160deg, #0f172a, #1e293b);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .sidebar-container:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
-/* Labels */
-.label {
-  color: #f1f5f9;
-  margin-left: 10px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-.label:hover {
-  color: #60a5fa;
-}
-
-/* Checkbox & Radio List */
-.checkbox-container {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
-  list-style-type: none;
-  gap: 10px;
-}
-
-.list-item {
-  display: flex;
-  align-items: center;
+.divider {
+  border: 0;
+  border-top: 1px solid #334155;
+  margin: 20px 0;
 }
 
 /* Section Headings */
@@ -64,10 +42,40 @@ h1 {
   font-size: 18px;
   font-weight: 600;
   color: #e2e8f0;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* Main Content */
+/* Checkbox & Radio List */
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  accent-color: #3b82f6; /* modern blue highlight */
+  cursor: pointer;
+}
+
+.label {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #f1f5f9;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.label:hover {
+  color: #60a5fa;
+}
+
+/* Main Section */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -76,42 +84,42 @@ h1 {
 
 /* Search Box */
 .search-input-container {
-  background: linear-gradient(90deg, #1e293b, #0f172a);
   display: flex;
   align-items: center;
-  border: solid 1px #334155;
+  background: linear-gradient(90deg, #1e293b, #0f172a);
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 6px 10px;
+  max-width: 400px;
   margin-bottom: 30px;
-  width: 100%;
-  max-width: 350px;
-  border-radius: 6px;
-  padding: 2px 6px;
-  transition: border 0.3s ease;
+  transition:
+    border 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .search-input-container:focus-within {
-  border: solid 1px #60a5fa;
-  box-shadow: 0 0 6px #3b82f6;
+  border: 1px solid #3b82f6;
+  box-shadow: 0 0 8px #2563eb;
 }
 
 .search-input {
-  background-color: transparent;
+  flex: 1;
+  background: transparent;
   border: none;
-  color: #f1f5f9;
-  width: 100%;
-  padding: 8px;
   outline: none;
-  font-size: 14px;
+  padding: 8px;
+  font-size: 15px;
+  color: #f1f5f9;
 }
 
-/* Search Button */
 .search-button {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   border: none;
+  border-radius: 8px;
+  padding: 6px 8px;
   cursor: pointer;
-  border-radius: 6px;
-  padding: 6px;
   transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 .search-button:hover {
   transform: scale(1.05);
@@ -124,12 +132,12 @@ h1 {
   width: 22px;
 }
 
-/* Jobs List */
+/* Job List */
 .jobs-list-container {
   padding-right: 20px;
 }
 
-/* Hoverable Job Cards (JobList -> JobCard li) */
+/* Job hover wrapper */
 .jobs-list-container li {
   transition:
     transform 0.3s ease,
@@ -137,21 +145,18 @@ h1 {
 }
 .jobs-list-container li:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
   background: linear-gradient(135deg, #1e293b, #0f172a);
-  padding: 4px;
+  padding: 6px;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media screen and (max-width: 1024px) {
   .job-container {
     flex-direction: column;
   }
-  .sidebar-container {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+  .sidebar-container,
   .main-container {
     width: 100%;
   }
